@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" id="Definitions_CamundaExceptionLatency" targetNamespace="https://kineticgain.com/camunda">
+  <process id="payment-exception-resolution" name="Payment exception resolution" isExecutable="true">
+    <startEvent id="start_payment_exception" name="Payment exception opened" />
+    <userTask id="review_exception" name="Review exception evidence" />
+    <exclusiveGateway id="approval_split" name="Approval owner clear?" />
+    <serviceTask id="route_remediation" name="Route remediation packet" />
+    <endEvent id="exception_closed" name="Exception closed" />
+    <sequenceFlow id="flow_1" sourceRef="start_payment_exception" targetRef="review_exception" />
+    <sequenceFlow id="flow_2" sourceRef="review_exception" targetRef="approval_split" />
+    <sequenceFlow id="flow_3" sourceRef="approval_split" targetRef="route_remediation" />
+    <sequenceFlow id="flow_4" sourceRef="route_remediation" targetRef="exception_closed" />
+  </process>
+</definitions>

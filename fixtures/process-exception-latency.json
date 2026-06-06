@@ -1,0 +1,45 @@
+{
+  "asOf": "2026-06-06T12:00:00Z",
+  "estate": "Camunda process instances, incident queues, human-task backlog, retry loops, and SLA breach lanes",
+  "lanes": [
+    {
+      "laneId": "payment-exception-resolution",
+      "process": "Payment exception resolution",
+      "monthlyInstances": 4200,
+      "activeIncidents": 8,
+      "overdueHumanTasks": 9,
+      "retryLoopCount": 4,
+      "avgDecisionLatencyHours": 30,
+      "slaBreachRatePercent": 16,
+      "unresolvedEscalations": 3,
+      "owner": "Revenue operations",
+      "nextAction": "Split approval ownership and pin unresolved payment exceptions to a daily board-readable escalation lane."
+    },
+    {
+      "laneId": "vendor-onboarding-review",
+      "process": "Vendor onboarding review",
+      "monthlyInstances": 1250,
+      "activeIncidents": 3,
+      "overdueHumanTasks": 4,
+      "retryLoopCount": 2,
+      "avgDecisionLatencyHours": 18,
+      "slaBreachRatePercent": 7,
+      "unresolvedEscalations": 1,
+      "owner": "Procurement operations",
+      "nextAction": "Reduce duplicate review loops and attach final approver evidence before the next vendor-intake release."
+    },
+    {
+      "laneId": "invoice-reconciliation",
+      "process": "Invoice reconciliation",
+      "monthlyInstances": 2800,
+      "activeIncidents": 1,
+      "overdueHumanTasks": 1,
+      "retryLoopCount": 0,
+      "avgDecisionLatencyHours": 6,
+      "slaBreachRatePercent": 2,
+      "unresolvedEscalations": 0,
+      "owner": "Finance systems",
+      "nextAction": "Keep invoice reconciliation proof attached to the monthly process-health packet."
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "camunda-process-exception-latency-ledger",
+  "version": "0.1.0",
+  "description": "Camunda-aligned process exception latency ledger for incident backlog, human-task drag, retry loops, and SLA breach exposure.",
+  "type": "module",
+  "bin": {
+    "camunda-process-exception-latency-ledger": "./dist/cli.js"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "coverage": "vitest run --coverage",
+    "build": "tsc -p tsconfig.json",
+    "demo": "tsx scripts/run_demo.ts",
+    "sql:check": "tsx scripts/check_sql.ts",
+    "bpmn:check": "tsx scripts/check_bpmn.ts",
+    "prerender": "tsx scripts/prerender.ts",
+    "smoke": "tsx scripts/smoke_check.ts",
+    "verify": "npm run lint && npm run typecheck && npm run coverage && npm run build && npm run demo && npm run sql:check && npm run bpmn:check && npm run prerender && npm run smoke"
+  },
+  "keywords": [
+    "camunda",
+    "bpmn",
+    "process-mining",
+    "workflow",
+    "incident-management",
+    "executive-intelligence",
+    "kinetic-gain"
+  ],
+  "author": "Kinetic Gain",
+  "license": "AGPL-3.0-only",
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/node": "^24.10.1",
+    "@vitest/coverage-v8": "^4.1.8",
+    "eslint": "^9.39.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.47.0",
+    "vitest": "^4.1.8"
+  }
+}
