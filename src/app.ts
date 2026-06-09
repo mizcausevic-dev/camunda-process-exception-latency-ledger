@@ -31,7 +31,7 @@ export function renderApp(input: ProcessExceptionInput): string {
     * { box-sizing: border-box; }
     body { margin: 0; font-family: "Segoe UI", sans-serif; background: radial-gradient(circle at 80% 0%, #142032, var(--bg) 42%); color: var(--text); }
     main { width: min(1160px, calc(100vw - 40px)); margin: 0 auto; padding: 56px 0 70px; }
-    .hero, .lane, .brief { border: 1px solid var(--line); background: rgba(13,23,39,.92); border-radius: 28px; box-shadow: 0 24px 80px rgba(0,0,0,.28); }
+    .hero, .lane, .brief, .proof-card { border: 1px solid var(--line); background: rgba(13,23,39,.92); border-radius: 28px; box-shadow: 0 24px 80px rgba(0,0,0,.28); }
     .hero { padding: 56px; border-color: rgba(37,215,239,.42); }
     .eyebrow { color: var(--green); font: 700 12px/1.2 Consolas, monospace; letter-spacing: .16em; text-transform: uppercase; }
     h1 { max-width: 900px; margin: 20px 0; font: 800 clamp(44px, 7vw, 86px)/.95 Georgia, serif; letter-spacing: -.05em; }
@@ -50,7 +50,11 @@ export function renderApp(input: ProcessExceptionInput): string {
     dd { margin: 4px 0 0; font-size: 22px; font-weight: 800; }
     code { color: var(--cyan); }
     .brief { margin-top: 28px; padding: 30px; }
-    @media (max-width: 780px) { .hero { padding: 32px; } .metrics, .lanes { grid-template-columns: 1fr; } }
+    .proof-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 28px; }
+    .proof-card { padding: 28px; }
+    .proof-card h3 { margin-top: 8px; }
+    .proof-card a { color: var(--cyan); text-decoration: none; }
+    @media (max-width: 780px) { .hero { padding: 32px; } .metrics, .lanes, .proof-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -70,6 +74,38 @@ export function renderApp(input: ProcessExceptionInput): string {
     <section class="brief">
       <p class="eyebrow">Primary recommendation</p>
       <p>${summary.primaryRecommendation}</p>
+    </section>
+    <section class="proof-grid" aria-label="Product depth and shared pattern">
+      <article class="proof-card">
+        <p class="eyebrow">Product purpose</p>
+        <h3>What this product does</h3>
+        <p>Turns Camunda process exceptions, human-task delays, retry loops, SLA breach risk, and owner ambiguity into a reusable process-latency ledger for operators and executives.</p>
+      </article>
+      <article class="proof-card">
+        <p class="eyebrow">Buyer lens</p>
+        <h3>Why executives care</h3>
+        <p>Workflow automation only creates value when leaders can see where the exception queue is growing, which teams own remediation, and which process delays are about to become customer or revenue impact.</p>
+      </article>
+      <article class="proof-card">
+        <p class="eyebrow">Value architecture</p>
+        <h3>How it turns into action</h3>
+        <p>The page compresses process telemetry into a board-readable path: rank the delay, assign the owner, isolate the exception pattern, and decide whether to automate, escalate, or redesign the workflow.</p>
+      </article>
+      <article class="proof-card">
+        <p class="eyebrow">Technical proof</p>
+        <h3>What reviewers can inspect</h3>
+        <p>The repo keeps typed process scoring, synthetic incident fixtures, deterministic static rendering, CI checks, and public-safe evidence output in one reviewable package.</p>
+      </article>
+      <article class="proof-card">
+        <p class="eyebrow">What these repos have in common</p>
+        <h3>Platform complexity becomes board-ready operating proof.</h3>
+        <p>Each repo names a buyer pain, exposes an evidence model, produces a reusable decision surface, and keeps the public demo boundary safe with synthetic data instead of credentials or customer exports.</p>
+      </article>
+      <article class="proof-card">
+        <p class="eyebrow">Interlinks</p>
+        <h3>Where this fits</h3>
+        <p><a href="https://portfolio.kineticgain.com/">Portfolio</a> · <a href="https://kineticgain.com/">Kinetic Gain</a> · <a href="https://github.com/mizcausevic-dev/camunda-process-exception-latency-ledger">GitHub</a></p>
+      </article>
     </section>
   </main>
 </body>
